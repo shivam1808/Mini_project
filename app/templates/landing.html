@@ -1,0 +1,119 @@
+<html lang="en">
+
+<head>
+    <style>
+        .body{
+            background-image: url('static/images/2652.jpg');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .text{
+            position:relative; 
+            left:80px; 
+            top:250px; 
+            color: black;
+            font-family: 'Montserrat';font-size: 20px;
+        }
+       .box {
+            height: 100px;
+            width: 500px;
+            }
+        .logo{
+            position:relative; 
+            left:80px; 
+            top:10px;
+        }
+        .btn {
+            margin-left: 10px;
+            margin-right: 10px;
+            }
+        .btn-success {
+            font-family: Raleway-SemiBold;
+            font-size: 30px;
+            color:rgb(0, 0, 0);
+            letter-spacing: 1px;
+            line-height: 32px;
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 40px;
+            background: transparent;
+            transition: all 0.3s ease 0s;
+        }
+        .btn-success:hover {
+            color: #FFF;
+            background:rgb(124, 59, 209);
+            border: 2px solid rgb(124, 59, 209);
+        }
+        .btn-pos{
+                position:relative; 
+                left:150%; 
+                top:420%; 
+                color: black;
+                font-family: 'Montserrat';font-size: 18px;
+            }
+        .size{
+                width: 20%;
+                height: auto;
+            }
+        @media only screen and (max-width: 600px) {
+            .body{
+                background-image: url('static/img/mobile.png');
+                background-repeat: no-repeat;
+                background-size: 100% auto;
+            }
+            .box {
+                height: 80px;
+                width: 250px;
+            }
+            .logo{
+                position:relative; 
+                left:10px; 
+                top:10px;
+            }
+            .text{
+                position:relative; 
+                left:10px; 
+                top:100px; 
+                color: black;
+                font-family: 'Montserrat';font-size: 16px;
+            }
+            .btn-success {
+            font-family: Raleway-SemiBold;
+            font-size: 25px;
+            color:rgb(124, 59, 209);
+            letter-spacing: 1px;
+            line-height: 27px;
+            border: 2px solid rgb(124, 59, 209);
+            border-radius: 40px;
+            background: transparent;
+            transition: all 0.3s ease 0s;
+             }
+            .btn-pos{
+                position:relative; 
+                left:10px; 
+                top:110px; 
+                color: black;
+                font-family: 'Montserrat';font-size: 16px;
+            }
+            .size{
+                width: 50%;
+                height: auto;
+            }
+        }
+    </style>
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Covid 19</title>     
+</head>
+
+<body class="body">
+        <div class="box">
+            <div class="btn-pos">
+                <a href="index.html"><button type="button" class="btn btn-success">Get Started</button></a>
+            </div>
+        </div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+flask
+pandas
+folium
+geocoder
+geopy
+python-google-places
+requests
+click==7.1.1
+Flask==1.1.1
+itsdangerous==1.1.0
+Jinja2==2.11.1
+MarkupSafe==1.1.1
+# uWSGI==2.0.18
+Werkzeug==1.0.0
+# Model
+numpy==1.18.2
+matplotlib==3.2.1
+Keras==2.2.5
+tensorflow==1.13.0rc1
+Pillow==6.2.0
+opencv-python==4.2.0.34

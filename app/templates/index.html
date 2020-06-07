@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% block content %}
+
+<h2 style="font-family: 'Montserrat';font-size: 30px; font-weight: bold;">Upload Chest X-Ray Image</h2>
+
+
+<h4 style="font-family: 'Montserrat'; text-align: center;"> Note: The AI model is trained on only Chest X-Ray dataset. Invalid result will be displayed if wrong data is provided </h4>
+<div>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="btn btn-success" style="font-family: Montserrat; margin-left: 21%">
+            Choose...
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+
+    <div class="image-section" style="display:none; margin-left: 17%">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-success" id="btn-predict" style="font-size: 30px;">Predict</button>
+        </div>
+    </div>
+
+    <div class="loader" style="display:none; margin-left: 24%"></div>
+    <h3 style="font-family: 'Montserrat';font-size: 30px; font-weight: bold;" id="result">
+        <span> </span>
+    </h3>
+    <h3 style="font-family: 'Montserrat';font-size: 30px; font-weight: bold;" id="prob">
+        <span> </span>
+    </h3>
+    <div>
+        <a href="heatmap.html"><button type="button" class="btn btn-success" style="font-size: 30px; margin-left: 18%" id="btn-heatmap">Show Results</button></a>
+    </div>
+    <br><br>
+
+</div>
+
+
+{% endblock %}

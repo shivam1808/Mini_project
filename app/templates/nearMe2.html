@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main5.css') }}">
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ab4766494b174ec2b62f21f500f266df {
+                    position: relative;
+                    width: 97.0%;
+                    height: 90.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                    margin: auto;
+                }
+            </style>
+
+                <style> html, body {
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+                    background-image: url('static/images/2652.jpg');
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                }</style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>    
+    <header>
+      <div class="container">
+        <h1 class="logo">Covid-19 Test Lab</h1>
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="{{ url_for('index') }}">Check</a></li>
+            <li><a href="{{ url_for('map') }}">Map</a></li>
+            <li><a href="/nearMe">Near Me</a></li>
+            <li><a href="{{ url_for('detail') }}">Detail</a></li>
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+    
+    <h3 align="center" style="font-size:20px"><b>Hospitals And Medical Stores Near You</b></h3>
+             
+    
+            <div class="folium-map" id="map_ab4766494b174ec2b62f21f500f266df" ></div>
+        
+</body>
+<script>    
+    
+            var map_ab4766494b174ec2b62f21f500f266df = L.map(
+                "map_ab4766494b174ec2b62f21f500f266df",
+                {
+                    center: [28.8389, 78.7768],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_519ee1dc9a954d4fa00c155861e9f15d = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_ab4766494b174ec2b62f21f500f266df);
+        
+    
+            var marker_cluster_cc1924f8ba964455a920ce9ae8015655 = L.markerClusterGroup(
+                {}
+            );
+            map_ab4766494b174ec2b62f21f500f266df.addLayer(marker_cluster_cc1924f8ba964455a920ce9ae8015655);
+        
+    
+            var marker_cc81aacc7faa4c35b64c033ed955d6f9 = L.marker(
+                [28.832438, 78.76248559999999],
+                {}
+            ).addTo(marker_cluster_cc1924f8ba964455a920ce9ae8015655);
+        
+    
+        var popup_ddceae789c4b4491b8145b3c26932b19 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b3a6a100c4a2479dba98fbc4f5919535 = $(`<div id="html_b3a6a100c4a2479dba98fbc4f5919535" style="width: 100.0%; height: 100.0%;">State K.G.K. Homeopathic Medical College & Hospital Distance: 1.56987km</div>`)[0];
+            popup_ddceae789c4b4491b8145b3c26932b19.setContent(html_b3a6a100c4a2479dba98fbc4f5919535);
+        
+
+        marker_cc81aacc7faa4c35b64c033ed955d6f9.bindPopup(popup_ddceae789c4b4491b8145b3c26932b19)
+        ;
+
+        
+    
+    
+            var marker_5b6ac27840ec4a82b01174b5bb4f174e = L.marker(
+                [28.828499, 78.7760711],
+                {}
+            ).addTo(marker_cluster_cc1924f8ba964455a920ce9ae8015655);
+        
+    
+        var popup_8992c5f9e2fd4c5b8113644cbea6e4cc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3aacd2f4db14451c881581e9c6e43486 = $(`<div id="html_3aacd2f4db14451c881581e9c6e43486" style="width: 100.0%; height: 100.0%;">City Hospital-Obecity Weight Loss Initiative Distance: 1.15497km</div>`)[0];
+            popup_8992c5f9e2fd4c5b8113644cbea6e4cc.setContent(html_3aacd2f4db14451c881581e9c6e43486);
+        
+
+        marker_5b6ac27840ec4a82b01174b5bb4f174e.bindPopup(popup_8992c5f9e2fd4c5b8113644cbea6e4cc)
+        ;
+
+        
+    
+    
+            var marker_46fd837e26f2454fbb262a7fc83ccc48 = L.marker(
+                [28.8372456, 78.76449389999999],
+                {}
+            ).addTo(marker_cluster_cc1924f8ba964455a920ce9ae8015655);
+        
+    
+        var popup_4d27a03cfe9641c9977a11fac48dfbae = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6b48421fc47c4897b65b3b2faae60e63 = $(`<div id="html_6b48421fc47c4897b65b3b2faae60e63" style="width: 100.0%; height: 100.0%;">Railway Hospital Distance: 1.21487km</div>`)[0];
+            popup_4d27a03cfe9641c9977a11fac48dfbae.setContent(html_6b48421fc47c4897b65b3b2faae60e63);
+        
+
+        marker_46fd837e26f2454fbb262a7fc83ccc48.bindPopup(popup_4d27a03cfe9641c9977a11fac48dfbae)
+        ;
+
+        
+    
+    
+            var marker_66643f0c973343ec829f875363779c3e = L.marker(
+                [28.8336905, 78.772835],
+                {}
+            ).addTo(marker_cluster_cc1924f8ba964455a920ce9ae8015655);
+        
+    
+        var popup_738daa8371034cf48698382d7dc23daa = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8c7cb0ee84ce4a518ab242ff3ec684ad = $(`<div id="html_8c7cb0ee84ce4a518ab242ff3ec684ad" style="width: 100.0%; height: 100.0%;">Kilkari Hospital Distance: 695.06m</div>`)[0];
+            popup_738daa8371034cf48698382d7dc23daa.setContent(html_8c7cb0ee84ce4a518ab242ff3ec684ad);
+        
+
+        marker_66643f0c973343ec829f875363779c3e.bindPopup(popup_738daa8371034cf48698382d7dc23daa)
+        ;
+
+        
+    
+    
+            var marker_bc19f7f22d9e4005b51db9a639ed8c8f = L.marker(
+                [28.8368656, 78.7736275],
+                {}
+            ).addTo(marker_cluster_cc1924f8ba964455a920ce9ae8015655);
+        
+    
+        var popup_dfb75ec9f2594875a54af17700a2ed34 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_521c7f0f1f5d488da4d5042487877dab = $(`<div id="html_521c7f0f1f5d488da4d5042487877dab" style="width: 100.0%; height: 100.0%;">Office Dist Homeopathic Medical Officer Distance: 383.01m</div>`)[0];
+            popup_dfb75ec9f2594875a54af17700a2ed34.setContent(html_521c7f0f1f5d488da4d5042487877dab);
+        
+
+        marker_bc19f7f22d9e4005b51db9a639ed8c8f.bindPopup(popup_dfb75ec9f2594875a54af17700a2ed34)
+        ;
+
+        
+    
+    
+            var marker_28436cf11b234bcdb9f91f027e476e4a = L.marker(
+                [28.84794599999999, 78.7709715],
+                {}
+            ).addTo(marker_cluster_cc1924f8ba964455a920ce9ae8015655);
+        
+    
+        var popup_b3798cea882c49f7bb892bacb6a99d56 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a92881a3199d4686bd62465c65b08e20 = $(`<div id="html_a92881a3199d4686bd62465c65b08e20" style="width: 100.0%; height: 100.0%;">Bhavya Hospital Distance: 1.1527km</div>`)[0];
+            popup_b3798cea882c49f7bb892bacb6a99d56.setContent(html_a92881a3199d4686bd62465c65b08e20);
+        
+
+        marker_28436cf11b234bcdb9f91f027e476e4a.bindPopup(popup_b3798cea882c49f7bb892bacb6a99d56)
+        ;
+
+        
+    
+    
+            var marker_f97b5bb5654d44da8042d41bbec484dc = L.marker(
+                [28.828772, 78.773091],
+                {}
+            ).addTo(marker_cluster_cc1924f8ba964455a920ce9ae8015655);
+        
+    
+        var popup_bcbad3c7e81e46148630af163584d463 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_269896e25e1d485a864e94964223895b = $(`<div id="html_269896e25e1d485a864e94964223895b" style="width: 100.0%; height: 100.0%;">REVIVE - Bone & Eye Clinic Distance: 1.17944km</div>`)[0];
+            popup_bcbad3c7e81e46148630af163584d463.setContent(html_269896e25e1d485a864e94964223895b);
+        
+
+        marker_f97b5bb5654d44da8042d41bbec484dc.bindPopup(popup_bcbad3c7e81e46148630af163584d463)
+        ;
+
+        
+    
+    
+            var marker_3bc7f5ec120d4afdb82145790fa19eb3 = L.marker(
+                [28.82756220000001, 78.7768304],
+                {}
+            ).addTo(marker_cluster_cc1924f8ba964455a920ce9ae8015655);
+        
+    
+        var popup_e424711c02f847b29d4fcf64693669ff = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7d86637e9eb84d7abb8041d997596002 = $(`<div id="html_7d86637e9eb84d7abb8041d997596002" style="width: 100.0%; height: 100.0%;">Ayurved Vikas Sansthan Distance: 1.25661km</div>`)[0];
+            popup_e424711c02f847b29d4fcf64693669ff.setContent(html_7d86637e9eb84d7abb8041d997596002);
+        
+
+        marker_3bc7f5ec120d4afdb82145790fa19eb3.bindPopup(popup_e424711c02f847b29d4fcf64693669ff)
+        ;
+
+        
+    
+    
+            var marker_d9343a92a639433e802348088571d7af = L.marker(
+                [28.8388622, 78.76293319999999],
+                {}
+            ).addTo(marker_cluster_cc1924f8ba964455a920ce9ae8015655);
+        
+    
+        var popup_0756dcbd00ba48c395b7f6a23e5c1ab8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d8cf32901c3f477eb0516564ca1972b5 = $(`<div id="html_d8cf32901c3f477eb0516564ca1972b5" style="width: 100.0%; height: 100.0%;">Dmr Hospital Distance: 1.35326km</div>`)[0];
+            popup_0756dcbd00ba48c395b7f6a23e5c1ab8.setContent(html_d8cf32901c3f477eb0516564ca1972b5);
+        
+
+        marker_d9343a92a639433e802348088571d7af.bindPopup(popup_0756dcbd00ba48c395b7f6a23e5c1ab8)
+        ;
+
+        
+    
+    
+            var marker_ffd44c8413b0401e8bb27e92eb4cbc56 = L.marker(
+                [28.8222465, 78.7809744],
+                {}
+            ).addTo(marker_cluster_cc1924f8ba964455a920ce9ae8015655);
+        
+    
+        var popup_3d077a8fe0e0404c9683b0ab38552626 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3d2ee64c0a2346e79f04c5f20b459a19 = $(`<div id="html_3d2ee64c0a2346e79f04c5f20b459a19" style="width: 100.0%; height: 100.0%;">Ashirwad Hospital Distance: 1.89019km</div>`)[0];
+            popup_3d077a8fe0e0404c9683b0ab38552626.setContent(html_3d2ee64c0a2346e79f04c5f20b459a19);
+        
+
+        marker_ffd44c8413b0401e8bb27e92eb4cbc56.bindPopup(popup_3d077a8fe0e0404c9683b0ab38552626)
+        ;
+
+        
+    
+    
+            var marker_7b4882e927824beca3688feb0798d06e = L.marker(
+                [28.809742, 78.769875],
+                {}
+            ).addTo(marker_cluster_cc1924f8ba964455a920ce9ae8015655);
+        
+    
+        var popup_362759cd3afa4917a98ba2344e9b5c0c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_70bcb57c1da14359a81b66e64209be32 = $(`<div id="html_70bcb57c1da14359a81b66e64209be32" style="width: 100.0%; height: 100.0%;">SULTAN HOSPITAL Distance: 3.30159km</div>`)[0];
+            popup_362759cd3afa4917a98ba2344e9b5c0c.setContent(html_70bcb57c1da14359a81b66e64209be32);
+        
+
+        marker_7b4882e927824beca3688feb0798d06e.bindPopup(popup_362759cd3afa4917a98ba2344e9b5c0c)
+        ;
+
+        
+    
+    
+            var marker_22af0faa1ae9440eae9f1f9253775484 = L.marker(
+                [28.8647453, 78.7490364],
+                {}
+            ).addTo(marker_cluster_cc1924f8ba964455a920ce9ae8015655);
+        
+    
+        var popup_3095d693c34040c8be223ab8390064d8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f92fa5710dc648adb4c7bddd998ab6ff = $(`<div id="html_f92fa5710dc648adb4c7bddd998ab6ff" style="width: 100.0%; height: 100.0%;">Surbhi Mother & Child Care Distance: 3.94268km</div>`)[0];
+            popup_3095d693c34040c8be223ab8390064d8.setContent(html_f92fa5710dc648adb4c7bddd998ab6ff);
+        
+
+        marker_22af0faa1ae9440eae9f1f9253775484.bindPopup(popup_3095d693c34040c8be223ab8390064d8)
+        ;
+
+        
+    
+    
+            var marker_a3556b2dbb084164a57d2b0466255f6b = L.marker(
+                [28.8381315, 78.7772667],
+                {}
+            ).addTo(marker_cluster_cc1924f8ba964455a920ce9ae8015655);
+        
+    
+        var popup_0d2d188a29da4b5fae31344e021a50ee = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b2a88c74003244a4a4133d0e667190c3 = $(`<div id="html_b2a88c74003244a4a4133d0e667190c3" style="width: 100.0%; height: 100.0%;">Honey Medical Agency Distance: 96.59m</div>`)[0];
+            popup_0d2d188a29da4b5fae31344e021a50ee.setContent(html_b2a88c74003244a4a4133d0e667190c3);
+        
+
+        marker_a3556b2dbb084164a57d2b0466255f6b.bindPopup(popup_0d2d188a29da4b5fae31344e021a50ee)
+        ;
+
+        
+    
+    
+            var marker_198f142a427a403fa72df98fae2b37ad = L.marker(
+                [28.8381248, 78.77770439999999],
+                {}
+            ).addTo(marker_cluster_cc1924f8ba964455a920ce9ae8015655);
+        
+    
+        var popup_54feffa6a75b42d6b54933a51ece60ee = L.popup({"maxWidth": "100%"});
+
+        
+            var html_254afb24443e431f8b1adeb9d0f89ba7 = $(`<div id="html_254afb24443e431f8b1adeb9d0f89ba7" style="width: 100.0%; height: 100.0%;">Avc Medical Hall Distance: 123.17m</div>`)[0];
+            popup_54feffa6a75b42d6b54933a51ece60ee.setContent(html_254afb24443e431f8b1adeb9d0f89ba7);
+        
+
+        marker_198f142a427a403fa72df98fae2b37ad.bindPopup(popup_54feffa6a75b42d6b54933a51ece60ee)
+        ;
+
+        
+    
+    
+            var marker_1d5e6074132349c4bd08a10907dde416 = L.marker(
+                [28.8401125, 78.776057],
+                {}
+            ).addTo(marker_cluster_cc1924f8ba964455a920ce9ae8015655);
+        
+    
+        var popup_d0631e446d224d9da64e23d1616678c6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d03dd4b501174c8ab82fd93e7f3955cf = $(`<div id="html_d03dd4b501174c8ab82fd93e7f3955cf" style="width: 100.0%; height: 100.0%;">Dr. Jameela Bara Dari Moradabad Distance: 152.7m</div>`)[0];
+            popup_d0631e446d224d9da64e23d1616678c6.setContent(html_d03dd4b501174c8ab82fd93e7f3955cf);
+        
+
+        marker_1d5e6074132349c4bd08a10907dde416.bindPopup(popup_d0631e446d224d9da64e23d1616678c6)
+        ;
+
+        
+    
+    
+            var marker_f416dc60306e40afbe73cd5abf0221da = L.marker(
+                [28.8402728, 78.777952],
+                {}
+            ).addTo(marker_cluster_cc1924f8ba964455a920ce9ae8015655);
+        
+    
+        var popup_4e711ff6ac774ac3906c64a4e29c6849 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3f057db4ef814202bacab53bcc546740 = $(`<div id="html_3f057db4ef814202bacab53bcc546740" style="width: 100.0%; height: 100.0%;">F K Medical Distance: 189.18m</div>`)[0];
+            popup_4e711ff6ac774ac3906c64a4e29c6849.setContent(html_3f057db4ef814202bacab53bcc546740);
+        
+
+        marker_f416dc60306e40afbe73cd5abf0221da.bindPopup(popup_4e711ff6ac774ac3906c64a4e29c6849)
+        ;
+
+        
+    
+    
+            var marker_3bacaa25aafd4373b9c9b145173d4abd = L.marker(
+                [28.8373992, 78.7777028],
+                {}
+            ).addTo(marker_cluster_cc1924f8ba964455a920ce9ae8015655);
+        
+    
+        var popup_de9103b5cc654343a5cfd64953e014a6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_acbdde02f7d6418697c0b41025a77d61 = $(`<div id="html_acbdde02f7d6418697c0b41025a77d61" style="width: 100.0%; height: 100.0%;">Gayatri Medical Agencies Distance: 188.23m</div>`)[0];
+            popup_de9103b5cc654343a5cfd64953e014a6.setContent(html_acbdde02f7d6418697c0b41025a77d61);
+        
+
+        marker_3bacaa25aafd4373b9c9b145173d4abd.bindPopup(popup_de9103b5cc654343a5cfd64953e014a6)
+        ;
+
+        
+    
+    
+            var marker_8e8f8a9c31d34eaca30c9887e82586df = L.marker(
+                [28.8372592, 78.7774527],
+                {}
+            ).addTo(marker_cluster_cc1924f8ba964455a920ce9ae8015655);
+        
+    
+        var popup_6dd6a02e839d45999a0fa8c9f987f83b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b53a929572ed4f8b8712310873efc91a = $(`<div id="html_b53a929572ed4f8b8712310873efc91a" style="width: 100.0%; height: 100.0%;">Jayant Medical Agencies Distance: 192.69m</div>`)[0];
+            popup_6dd6a02e839d45999a0fa8c9f987f83b.setContent(html_b53a929572ed4f8b8712310873efc91a);
+        
+
+        marker_8e8f8a9c31d34eaca30c9887e82586df.bindPopup(popup_6dd6a02e839d45999a0fa8c9f987f83b)
+        ;
+
+        
+    
+    
+            var marker_412c74413daf433baff398fbe7e49b53 = L.marker(
+                [28.8391154, 78.77968229999999],
+                {}
+            ).addTo(marker_cluster_cc1924f8ba964455a920ce9ae8015655);
+        
+    
+        var popup_548c9fbce96243e888cf37d7fc21a0d8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_97b2cd60a2cd48a286b2c15667467d23 = $(`<div id="html_97b2cd60a2cd48a286b2c15667467d23" style="width: 100.0%; height: 100.0%;">Rehmat Health Clinic (dr sohrab khan) Distance: 282.29m</div>`)[0];
+            popup_548c9fbce96243e888cf37d7fc21a0d8.setContent(html_97b2cd60a2cd48a286b2c15667467d23);
+        
+
+        marker_412c74413daf433baff398fbe7e49b53.bindPopup(popup_548c9fbce96243e888cf37d7fc21a0d8)
+        ;
+
+        
+    
+    
+            var marker_01d400cdd737448ca4a57f3c957cb86e = L.marker(
+                [28.8414235, 78.7759232],
+                {}
+            ).addTo(marker_cluster_cc1924f8ba964455a920ce9ae8015655);
+        
+    
+        var popup_0de4e9e0a5ab486d93edb3846900600c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9d920adb27bb4dbe80aa8928ea691e1f = $(`<div id="html_9d920adb27bb4dbe80aa8928ea691e1f" style="width: 100.0%; height: 100.0%;">Muzaffar Child Care & Birth Hospital Distance: 292.48m</div>`)[0];
+            popup_0de4e9e0a5ab486d93edb3846900600c.setContent(html_9d920adb27bb4dbe80aa8928ea691e1f);
+        
+
+        marker_01d400cdd737448ca4a57f3c957cb86e.bindPopup(popup_0de4e9e0a5ab486d93edb3846900600c)
+        ;
+
+        
+    
+    
+            var marker_0f2dc82d98834f9184d58ec7076c7462 = L.marker(
+                [28.8389, 78.7768],
+                {}
+            ).addTo(map_ab4766494b174ec2b62f21f500f266df);
+        
+    
+            var icon_d3d9c4ecbc374e039964f7169aafe91e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "male", "iconColor": "white", "markerColor": "darkblue", "prefix": "fa"}
+            );
+            marker_0f2dc82d98834f9184d58ec7076c7462.setIcon(icon_d3d9c4ecbc374e039964f7169aafe91e);
+        
+    
+        var popup_ad323ccc1da945278065242e31024671 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_dd14abe300eb42b1abf46c1dde7b89a6 = $(`<div id="html_dd14abe300eb42b1abf46c1dde7b89a6" style="width: 100.0%; height: 100.0%;">Your Location</div>`)[0];
+            popup_ad323ccc1da945278065242e31024671.setContent(html_dd14abe300eb42b1abf46c1dde7b89a6);
+        
+
+        marker_0f2dc82d98834f9184d58ec7076c7462.bindPopup(popup_ad323ccc1da945278065242e31024671)
+        ;
+
+        
+    
+    
+            var circle_a8dbe032c17849cba2d4db95dd18ee28 = L.circle(
+                [28.8389, 78.7768],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5000, "stroke": true, "weight": 3}
+            ).addTo(map_ab4766494b174ec2b62f21f500f266df);
+        
+</script>

@@ -1,0 +1,160 @@
+.img-preview {
+    width: 256px;
+    height: 256px;
+    position: relative;
+    border: 5px solid #F8F8F8;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    margin-top: 1em;
+    margin-bottom: 1em;    
+}
+
+.img-preview>div {
+    width: 100%;
+    height: 100%;
+    background-size: 256px 256px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.loader {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid rgb(124, 59, 209);/* purple */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+.btn {
+    margin-left: 10px;
+    margin-right: 10px;
+    }
+
+.btn-success {
+    font-family: Raleway-SemiBold;
+    font-size: 13px;
+    color:rgb(124, 59, 209);
+    letter-spacing: 1px;
+    line-height: 15px;
+    border: 2px solid rgb(124, 59, 209);
+    border-radius: 40px;
+    background: transparent;
+    transition: all 0.3s ease 0s;
+}
+.btn-success:hover {
+    color: #FFF;
+    background:rgb(124, 59, 209);
+    border: 2px solid rgb(124, 59, 209);
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+body {
+  margin: 0;
+  padding: 10px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+}
+/*
+ * Formatting the header area
+ */
+header {
+  background-color: #000000;
+  height: 50px;
+  width: 100%;
+  opacity: .9;
+  margin-bottom: 10px;
+  border-radius:10px;
+  padding: 10px;
+}
+header h1.logo {
+  margin: 0;
+  font-size: 2em;
+  color: #fff;
+  text-transform: uppercase;
+  float: left;
+}
+header h1.logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+/*
+ * Centering the body content
+ */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+div.home {
+  padding: 10px 0 30px 0;
+  background-color: #E6E6FA;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+div.about {
+  padding: 10px 0 30px 0;
+  background-color: #E6E6FA;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+h2 {
+  font-size: 1em;
+  margin-top: 40px;
+  text-align: center;
+  letter-spacing: -2px;
+}
+h3 {
+  font-size: 1.7em;
+  font-weight: 100;
+  margin-top: 30px;
+  text-align: center;
+  letter-spacing: -1px;
+  color: #999;
+}
+
+.menu {
+  float: right;
+}
+
+.menu li {
+  display: inline;
+}
+
+.menu li + li {
+  margin-left: 35px;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.tg  {
+  border-collapse:collapse;
+  border-color:#aaa;
+  border-spacing:0;
+  margin: 0 auto;
+  width:95%
+  }
+.tg td{background-color:#fff;border-bottom-width:1px;border-color:#aaa;border-style:solid;border-top-width:1px;
+  border-width:0px;color:#333;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;
+  word-break:normal;}
+.tg th{background-color:#f38630;border-bottom-width:1px;border-color:#aaa;border-style:solid;border-top-width:1px;
+  border-width:0px;color:#fff;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;
+  padding:10px 5px;word-break:normal;}
+.tg .tg-k2pw{border-color:inherit;font-family:"Lucida Console", Monaco, monospace !important;;font-size:18px;font-weight:bold;
+  text-align:left;vertical-align:top}
+.tg .tg-7ids{background-color:#FCFBE3;border-color:inherit;font-family:"Lucida Console", Monaco, monospace !important;;
+  text-align:left;vertical-align:top}
+.tg .tg-5nj1{border-color:inherit;font-family:"Lucida Console", Monaco, monospace !important;;text-align:left;vertical-align:top}
