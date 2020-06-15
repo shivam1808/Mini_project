@@ -1,0 +1,5 @@
+No. of Layers: 28
+Number of layer trained: 5
+No. of neuron in top trainable layer: 1200
+		Attempt 4
+50.0
