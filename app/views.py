@@ -31,7 +31,7 @@ def allowed_file(filename):
 def index():
     # Main page
     session.pop('filename', None)
-    heatmap_path='app/static/heatmap/'
+    heatmap_path='/Mini/app/static/heatmap/'
     heatmap_files=[f for f in listdir(heatmap_path) if isfile(join(heatmap_path, f))]
     [os.remove(heatmap_path+heatmap_file) for heatmap_file in heatmap_files if heatmap_file != 'heatmap.jpeg']
     data_files=[f for f in listdir(UPLOAD_FOLDER) if isfile(join(UPLOAD_FOLDER, f))]
