@@ -61,8 +61,8 @@ with open('summary.txt','w') as fh:
 
 from keras.preprocessing.image import ImageDataGenerator
 
-train_data_dir = '/Mini/dataset/train/'
-validation_data_dir = '/Mini/dataset/validation/'
+train_data_dir = '/Mini/Build_Model/dataset/train/'
+validation_data_dir = '/Mini/Build_Model/dataset/validation/'
 
 # Let's use some data augmentaiton 
 train_datagen = ImageDataGenerator(
