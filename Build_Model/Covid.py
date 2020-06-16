@@ -116,12 +116,18 @@ history = model.fit_generator(
     validation_data = validation_generator,
     validation_steps = nb_validation_samples // batch_size)
 
-accuracy = max(history.history['accuracy'])
+accuracy = max(history.history['acc'])
 model.save('covid_model.h5')
 
 print("Accuracy: ",accuracy)
 
 file1 = open("accuracy.txt", "w")
-file1.write(str(accuracy*100))
+file1.write("Data Augmentation: " + "True" + "\n")
+file1.write("Loss function: " + "categorical_crossentropy" + "\n")
+file1.write("Optimizer: " + "Adam" + "\n")
+file1.write("Learning Rate: " + str(0.001) + "\n")
+file1.write("Epochs: " + str(epochs) + "\n")
+file1.write("Batch Size: " + str(batch_size) + "\n")
+file1.write("Accuracy: " + str(accuracy*100))
 file1.close()
 

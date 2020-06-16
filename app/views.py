@@ -15,10 +15,10 @@ import re
 from datetime import datetime
 import smtplib
 
-UPLOAD_FOLDER = 'app/data/'
+UPLOAD_FOLDER = '/Mini/app/data/'
 app.secret_key = '/\x8c\x9a\xadT\xdf\x1b\xf0\r\x87\xa9\x1aV\xd5\x04\xbc\x0c\xff|\x15\x0edmd'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-MODEL_PATH = 'app/models/covid_model.h5'
+MODEL_PATH = '/Mini/app/models/covid_model.h5'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 ALLOWED_EXTENSIONS = set(['jpg', 'jpeg', 'png'])
@@ -41,7 +41,7 @@ def index():
 @app.route('/heatmap.html', methods=['GET'])
 def heatmap():
     FILE=None
-    if isfile('app/static/heatmap/'+str(session['filename'])):
+    if isfile('/Mini/app/static/heatmap/'+str(session['filename'])):
         FILE=escape(session['filename'])
     return render_template('heatmap.html',image_path=FILE)
 
@@ -83,7 +83,7 @@ def upload():
 
 @app.route('/map.html')
 def map():
-    dataset = pd.read_csv('lab_coordinate.csv')
+    dataset = pd.read_csv('/Mini/lab_coordinate.csv')
     place = dataset[ ['Latitude', 'Longitude'] ]
     place=place.values.tolist()
 
@@ -137,9 +137,9 @@ def map():
     #bot = Coronavirus()
     #bot.get_data()
 
-    total_case = '236,954'
-    total_death = '6,649'
-    total_recovere = '116,232'
+    total_case = '343,026'
+    total_death = '9,915'
+    total_recovere = '180,320'
 
     return render_template('map.html', total_cases=total_case, total_deaths=total_death, total_recovered=total_recovere)
 
