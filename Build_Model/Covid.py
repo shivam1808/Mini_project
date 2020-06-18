@@ -122,7 +122,7 @@ model.save('covid_model.h5')
 print("Accuracy: ",accuracy)
 
 file1 = open("accuracy.txt", "w")
-file1.write("Data Augmentation: " + "True" + "\n")
+file1.write("Data-Augmentation: " + "True" + "\n")
 file1.write("Loss function: " + "categorical_crossentropy" + "\n")
 file1.write("Optimizer: " + "Adam" + "\n")
 file1.write("Learning Rate: " + str(0.001) + "\n")
