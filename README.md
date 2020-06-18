@@ -1,1 +1,1 @@
-# Mini_project
+# Mini_project Covid
