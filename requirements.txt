@@ -16,6 +16,6 @@ Werkzeug==1.0.0
 numpy==1.18.2
 matplotlib==3.2.1
 Keras==2.2.5
-tensorflow==1.13.0rc1
+tensorflow==2.4.0rc1
 Pillow==6.2.0
 opencv-python==4.2.0.34
