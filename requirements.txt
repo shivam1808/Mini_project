@@ -13,7 +13,7 @@ MarkupSafe==1.1.1
 # uWSGI==2.0.18
 Werkzeug==1.0.0
 # Model
-numpy==1.21.0
+numpy==1.22.0
 matplotlib==3.2.1
 Keras==2.2.5
 tensorflow==2.6.4
